@@ -1,2 +1,4 @@
 numpy 
 lightkurve
+astropy 
+astroquery 
