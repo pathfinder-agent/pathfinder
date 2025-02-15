@@ -39,6 +39,9 @@ while True:
         if len(sets) == 0:
             print("Empty set for id: %s", name)
             continue;
+        csv_writer.write_row({"TIC_ID": sets[0].id})
+    
+    
 
 
 
