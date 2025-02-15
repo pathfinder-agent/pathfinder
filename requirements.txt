@@ -1,4 +1,8 @@
 numpy 
 lightkurve
 astropy 
-astroquery 
+astroquery
+pandas
+pydl
+python-dotenv
+tensorflow
