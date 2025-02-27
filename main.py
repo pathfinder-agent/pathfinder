@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from twitter import Twitter
 from csvwriter import CSVWriter
 import os
-import output_reader
+import out
 import twitter
 
 
@@ -43,7 +43,7 @@ while True:
             print("Empty set for id: %s", name)
             continue;
         csv_writer.write_row({"TIC_ID": sets[0].id})
-    files = output_reader.read(output_dir)
+    files = out.read(output_dir)
     for data in files:
         tw_client.tweet(data['target_id'], [data['tpf'], data['lc'], data['phase']])
     
