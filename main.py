@@ -3,9 +3,12 @@ from dotenv import load_dotenv
 from twitter import Twitter
 from csvwriter import CSVWriter
 import os
+import output_reader
+import twitter
 
 
 load_dotenv()
+output_dir = os.getenv('PNG_OUTPUT', './out')
 
 def init_twitter():
     ck = os.getenv('TWITTER_CONSUMER_KEY', None)
@@ -25,7 +28,7 @@ def init_csv():
 
 search_radius = os.getenv('SEARCH_RADIUS', 0.1)
 
-tw_lclient = init_twitter()
+tw_client = init_twitter()
 csv_writer = init_csv()
 
 while True:
@@ -40,6 +43,10 @@ while True:
             print("Empty set for id: %s", name)
             continue;
         csv_writer.write_row({"TIC_ID": sets[0].id})
+    files = output_reader.read(output_dir)
+    for data in files:
+        tw_client.tweet(data['target_id'], [data['tpf'], data['lc'], data['phase']])
+    
     
     
 
