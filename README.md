@@ -3,9 +3,13 @@
 Pathfinder is an AI agent designed to identify exoplanets using deep learning. It is built upon the foundational work described in the article "Identifying Exoplanets with Deep Learning III: Automated Triage and Vetting of TESS Candidates." This agent employs a deep neural network (DNN) to analyze data from the Transiting Exoplanet Survey Satellite (TESS) mission. Pathfinder searches the Mikulski Archive for Space Telescopes (MAST) and processes Target Pixel Files to detect exoplanets in other star systems in real time.
 
 Upon the discovery of a new exoplanet, Pathfinder generates two plots and shares them on X (formerly Twitter). The first image is a lightcurve, which depicts the variations in light intensity of the observed celestial object: 
+
 ![Light curve example](lc_example.jpg)
+
 The second image is a folded version of the lightcurve with a specified period to highlight periodic signals:
-![Folded example](lc_example.jpg)
+
+![Folded example](folded_example.jpg)
+
 
 ## Make Your Own Discovery
 
